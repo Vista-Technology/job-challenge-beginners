@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  rebels:
+    image: rebels:latest
+    container_name: rebels
+    ### ATTENZIONE ###
+    # Esporre pubblicamente la porta 5000 del container
+    # https://docs.docker.com/compose/networking/
+
+  deathstar:
+    image: deathstar:latest
+    container_name: ds1
+    depends_on:
+      - rebels

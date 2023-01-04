@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 3s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  ### ATTENZIONE ###
+  # Configurare un alro job, di nome "starwars", che come target avrà l'applicativo python rebels
