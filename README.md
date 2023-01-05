@@ -218,7 +218,7 @@ Una volta terminati tutti gli esercizi in locale, spegnere l'ambiente di laborat
 ❯ vagrant halt
 ```
 
-Eliminare la cartella nascosta denominata _.vagrant_ e creare uno zip di tutto il progetto.
+Eliminare le cartelle nascoste denominata _.vagrant_ e _.git_ e creare uno zip di tutto il progetto.
  
 Condividere tramite snapshot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata ed ottenere il link pubblico.
 _(Impostare il timeout di snapshot a non meno di 30 secondi)_
