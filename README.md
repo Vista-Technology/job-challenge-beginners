@@ -1,7 +1,7 @@
 # Job Challenge DevOps: livello Beginners
 ![Challenge](./docs/challenge.png)
 ## Scopo
-Lo scopo di questa challange è quella di testare le capacità del candidato su alcuni temi base, quali ad esmepio:
+Lo scopo di questa challange è quella di testare le capacità del candidato su alcuni temi base, quali ad esempio:
  - containerizzazione
     - utilizzo di Docker e Docker-compose
  - automazione
@@ -138,7 +138,7 @@ Il primo esercizio consiste proprio nel completare i due Dockerfile e lanciare l
 
 Le immagini dovranno essere taggate rispettivamente come:
  - deathstar:latest
- - rebeles:latest
+ - rebels:latest
 
 ### Link utili
  - https://docs.docker.com/engine/reference/commandline/build/
