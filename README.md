@@ -14,7 +14,9 @@ All'interno di questo repository ci sono 2 semplici applicativi python che funge
 Alcuni file all'interno del repository non sono completi. Sarà cura del candidato andare a completare correttamente i file per ottenere il risultato desiderato.
 Ogni volta che servirà insirire le informazioni mancanti, si troverà direttamente all'interno del file il commento __### ATTENZIONE ###__.
 
-Tutto l'ambiente di laboratorio si svolgerà all'interno di una VM (una Ubuntu 20.04 64), il cui provisioning è gestito da Vagrant (VirtualBox come provider).
+Tutto l'ambiente di laboratorio si svolgerà all'interno di una VM (una Ubuntu 22.04 64), il cui provisioning è gestito da Vagrant (VirtualBox come provider).
+
+La VM creata richiederà 2,5GB di RAM e 2 vCPU.
 
 _May the force be with you_
 ## Prerequisiti
@@ -53,6 +55,8 @@ Creare a far partire la VM, che avrà già preinstallato docker, docker-compose 
 ```
 
 **ATENZIONE** durante l'avvio vi verrà chiesto di scegliere quale interfaccia network utilizzare. Selezionate l'interfaccia principale del vostro PC/Laptop in maniera tale che il network sia condiviso da host e guest VM. Ciò vi consentire di accedere, ad esempio, direttamente dal vostro browser a Prometheus e Grafana, semplicemente andando a indicare nell'URL l'indirizzo IP della VM che Vagrant creerà.
+
+**ATENZIONE** La procedurà potrebbe richiedere fino a 30 minuti per il corretto completamento. Non cosiderate i log di output durante l'installazione finale di minikube, sono molto verbosi e fuorvianti (il rosso non è indicativo di un reale errore).
 
 ```shell
 ❯ vagrant up
@@ -98,7 +102,6 @@ Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-56-generic x86_64)
   IPv4 address for docker0:         172.17.0.1
   IPv4 address for enp0s3:          10.0.2.15
   IPv4 address for enp0s8:          192.168.1.121
-  IPv6 address for enp0s8:          2001:b07:6440:d46e:a00:27ff:feff:8aa9
 
  * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
    just raised the bar for easy, resilient and secure K8s cluster deployment.
@@ -158,18 +161,19 @@ Verificare poi che i 2 servizi siano correttamente up&running
  - https://docs.docker.com/engine/reference/commandline/compose_ps/
  - https://docs.docker.com/engine/reference/commandline/ps/
  - https://docs.docker.com/engine/reference/commandline/compose_logs/
+ - https://docs.docker.com/compose/compose-file/
 
 # ESERCIZIO 3: installazione automatizzata di Prometheus e Grafana
 Spostiamoci ora nella cartella _monitoring_.
-Dentro le sottocartelle _prometheus_ e _grafana_ sono contenuti i file denominati playbook.yaml, sono i file che contanono i task Ansible utilizzi all'installazione automatizzata sia di Prometheus che di Grafana.
+Dentro le sottocartelle _prometheus_ e _grafana_ sono contenuti i file denominati playbook.yaml, sono i file che contengono i task Ansible utilizzati dall'installazione automatizzata sia di Prometheus che di Grafana.
 
 I task descritti all'interno dei file non sono completi, vanno quindi inserite le informazioni mancanti seguendo le istruzioni.
 
-Inoltre, per quanto riguarda Prtometheus, anche il file di configurazione (config.yml) va completato inserendo le informazioni di scraping mancanti per l'applicativo "rebels".
+Inoltre, per quanto riguarda Prometheus, anche il file di configurazione (config.yml) va completato inserendo le informazioni di scraping mancanti per l'applicativo "rebels".
 
 Una volta completati i file si può eseguire la procedura di automazione, andando, per ognuna delle cartelle, ad eseguire il comando ansible-playbook relativamente al file playbook.yaml.
 
-Lanciati i due playbook ansible, si vada a verificare che entrmabi i serivizi sono attivi, per esmepio visitando le rispettive GUI:
+Lanciati i due playbook ansible, si vada a verificare che entrambi i servizi sono attivi, per esempio visitando le rispettive GUI:
  - Prometheus: http://IP-della-VM:9090
  - Prometheus: http://IP-della-VM:3000
 
@@ -185,7 +189,7 @@ Utilizzando la GUI di Grafana si dovranno configurare:
  - Un nuovo Data Source per Prometheus
     - nome del data source: "Prometheus"
     - URL: l'indirizzo IP della VM sulla porta 9090
- - Import di Una dashboard completa di grafici preconfigurati
+ - Import di una dashboard completa di grafici preconfigurati
     - importare il file JSON che si trova all'interno della folder _monitoring/grafana/dashboards_
  - Tema light come grafica di default
 
@@ -202,7 +206,16 @@ Verificare il corretto funzionamento della dashboard
  
  # Risultato finale
  Una volta terminati tutti gli esercizi committare e pushare sul repository forkato in maniera tale che contenga tutto il lavoro svolto.
- Condividere tramite snaposhot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata.
+ Condividere tramite snapshot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata.
+ _(Impostare il timeout di snapshot a non meno di 30 secondi)_
  
  ### Link utili
   - https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/
+
+# ESERCIZIO BONUS
+Se ti sei annoiato e gli esercizi sono stati troppo semplici eccoti un sfida un pochino più interessante!
+
+All'interno della VM troverai già installato un cluster Kubernetes con minikube (e il comando kubectl).
+Prova a rifare l'esercizio 2 andando a mettere i deployment all'interno di un nuovo namespace, chiamato starwars, all'interno del cluster Kubernetes, invece di utilizzare il docker-compose.
+
+Ricordati di committare e pushare tutti i file manifest che utilizzerai. Mettili dentro una cartella chiamata _bonus_

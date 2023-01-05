@@ -17,7 +17,6 @@
         # chiamato "/etc/prometheus/prometheus.yml", con il contenuto del file config.yml.
         # Il mode deve essere 0755 e owner e group uguale a prometheus
         # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html
-        # (non occorre fare un template jinja, si può prendere direttamente tutto il contenuto di config.yml)
 
     - name: Restart Prometheus
       systemd:
