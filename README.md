@@ -24,8 +24,6 @@ Occorre avere installato sul proprio PC/Laptop i seguenti sw:
  - Vagrant (https://developer.hashicorp.com/vagrant/downloads)
  - VirtualBox (https://www.virtualbox.org/wiki/Downloads)
 
-**Occorre avere un account su GitHub e fare un fork del presente repository, lavorando direttamente su di esso.**
-
 ## Struttura del repository
 All'interno del repository si trova il Vagrantfile che verrà utilizzato da vagrant per allestire la VM su cui esercitare il laboratorio.
 
@@ -35,10 +33,10 @@ All'interno della cartella _monitoring_ sono presenti altre 2 folder denominate 
 All'interno di queste due sottocartelle troviamo tutti i file necessari per l'automazione Ansible utile ad installare sia Prometheus che Grafana.
 
 ## Allestimento laboratorio
-Clonare il proprio repository appena forkato e posizionarsi all'interno della cartella
+Clonare il repository in locale e posizionarsi all'interno della cartella
 
 ```shell
-❯ git clone https://github.com/......../job-challenge-beginners
+❯ git clone https://github.com/Vista-Technology/job-challenge-beginners
 ❯ cd job-challenge-beginners
 ```
 
@@ -204,13 +202,27 @@ Verificare il corretto funzionamento della dashboard
  - https://grafana.com/docs/grafana/v9.0/dashboards/export-import/
  - https://grafana.com/docs/grafana/v8.5/administration/preferences/change-grafana-theme/
  
- # Risultato finale
- Una volta terminati tutti gli esercizi committare e pushare sul repository forkato in maniera tale che contenga tutto il lavoro svolto.
- Condividere tramite snapshot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata.
- _(Impostare il timeout di snapshot a non meno di 30 secondi)_
+# Risultato finale
+Una volta terminati tutti gli esercizi in locale, spegnere l'ambiente di laboratorio con il comando
+
+```shell
+❯ vagrant halt
+```
+
+Eliminare la cartella nascosta denominata _.vagrant_ e creare uno zip di tutto il progetto.
  
- ### Link utili
-  - https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/
+Condividere tramite snapshot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata ed ottenere il link pubblico.
+_(Impostare il timeout di snapshot a non meno di 30 secondi)_
+ 
+Cartella zippata e link pubblico possono essere mandati via mail, per la correzione, all'indirizzo email challenge@vistatech.dev
+
+Se si vuole ripulire tutto l'ambiente di laboratorio eseguire il comando
+
+```shell
+❯ vagrant destroy
+```
+### Link utili
+ - https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/
 
 # ESERCIZIO BONUS
 Se ti sei annoiato e gli esercizi sono stati troppo semplici eccoti un sfida un pochino più interessante!
