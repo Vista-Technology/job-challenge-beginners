@@ -22,7 +22,7 @@ Occorre avere installato sul proprio PC/Laptop i seguenti sw:
  - Vagrant (https://developer.hashicorp.com/vagrant/downloads)
  - VirtualBox (https://www.virtualbox.org/wiki/Downloads)
 
-**Occorre avere un account su GitHub e fare un fork del presente repository e lavorate su di esso.**
+**Occorre avere un account su GitHub e fare un fork del presente repository, lavorando direttamente su di esso.**
 
 ## Struttura del repository
 All'interno del repository si trova il Vagrantfile che verrà utilizzato da vagrant per allestire la VM su cui esercitare il laboratorio.
