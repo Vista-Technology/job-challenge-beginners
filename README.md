@@ -197,3 +197,10 @@ Verificare il corretto funzionamento della dashboard
  - https://grafana.com/docs/grafana/latest/administration/data-source-management/
  - https://grafana.com/docs/grafana/v9.0/dashboards/export-import/
  - https://grafana.com/docs/grafana/v8.5/administration/preferences/change-grafana-theme/
+ 
+ # Risultato finale
+ Una volta terminati tutti gli esercizi committare e pushare sul repository forkato in maniera tale che contenga tutto il lavoro svolto.
+ Condividere tramite snaposhot pubblica (snapshot.raintank.io) la dashboard Grafana appena creata.
+ 
+ ### Link utili
+  - https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/
