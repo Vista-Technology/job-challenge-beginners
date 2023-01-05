@@ -14,6 +14,8 @@ All'interno di questo repository ci sono 2 semplici applicativi python che funge
 Alcuni file all'interno del repository non sono completi. Sarà cura del candidato andare a completare correttamente i file per ottenere il risultato desiderato.
 Ogni volta che servirà insirire le informazioni mancanti, si troverà direttamente all'interno del file il commento __### ATTENZIONE ###__.
 
+Tutto l'ambiente di laboratorio si svolgerà all'interno di una VM (una Ubuntu 20.04 64), il cui provisioning è gestito da Vagrant (VirtualBox come provider).
+
 _May the force be with you_
 ## Prerequisiti
 Occorre avere installato sul proprio PC/Laptop i seguenti sw:
@@ -44,7 +46,7 @@ Installare un plugin aggiuntivo per Vagrant, relativamente a docker-compose
 ❯ vagrant plugin install vagrant-docker-compose
 ```
 
-Creare a far partire la VM (una Ubuntu 20.04 64), che avrà già preinstallato docker, docker-compose e ansible
+Creare a far partire la VM, che avrà già preinstallato docker, docker-compose e ansible
 
 ```shell
 ❯ vagrant up
