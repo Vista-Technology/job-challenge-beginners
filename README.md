@@ -202,6 +202,15 @@ Verificare il corretto funzionamento della dashboard
  - https://grafana.com/docs/grafana/v9.0/dashboards/export-import/
  - https://grafana.com/docs/grafana/v8.5/administration/preferences/change-grafana-theme/
  
+
+# ESERCIZIO BONUS
+Se ti sei annoiato e gli esercizi sono stati troppo semplici eccoti un sfida un pochino più interessante!
+
+All'interno della VM troverai già installato un cluster Kubernetes con minikube (e il comando kubectl).
+Prova a rifare l'esercizio 2 andando a mettere i deployment all'interno di un nuovo namespace, chiamato starwars, all'interno del cluster Kubernetes, invece di utilizzare il docker-compose.
+
+Ricordati di inserire tutti i file manifest che utilizzerai. Mettili dentro una cartella chiamata _bonus_
+
 # Risultato finale
 Una volta terminati tutti gli esercizi in locale, spegnere l'ambiente di laboratorio con il comando
 
@@ -223,11 +232,3 @@ Se si vuole ripulire tutto l'ambiente di laboratorio eseguire il comando
 ```
 ### Link utili
  - https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/
-
-# ESERCIZIO BONUS
-Se ti sei annoiato e gli esercizi sono stati troppo semplici eccoti un sfida un pochino più interessante!
-
-All'interno della VM troverai già installato un cluster Kubernetes con minikube (e il comando kubectl).
-Prova a rifare l'esercizio 2 andando a mettere i deployment all'interno di un nuovo namespace, chiamato starwars, all'interno del cluster Kubernetes, invece di utilizzare il docker-compose.
-
-Ricordati di committare e pushare tutti i file manifest che utilizzerai. Mettili dentro una cartella chiamata _bonus_
