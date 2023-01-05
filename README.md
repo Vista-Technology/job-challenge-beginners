@@ -184,7 +184,7 @@ Utilizzando la GUI di Grafana si dovranno configurare:
     - nome del data source: "Prometheus"
     - URL: l'indirizzo IP della VM sulla porta 9090
  - Import di Una dashboard completa di grafici preconfigurati
-    - importare il file JSON che si trova all'interno della folder _monitoring/grafana/dashboards
+    - importare il file JSON che si trova all'interno della folder _monitoring/grafana/dashboards_
  - Tema light come grafica di default
 
 Per l'accesso alla GUI le credenziali iniziali (verrà poi chiesto di modificare la password al primo accesso) sono admin:admin
