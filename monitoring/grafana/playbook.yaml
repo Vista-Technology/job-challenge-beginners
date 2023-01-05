@@ -20,7 +20,7 @@
         validate_certs: no
 
     - name: Install Grafana
-      ### Attenazione ###
+      ### ATTENZIONE ###
       # Completare il task andando ad inserire l'istruzione per l'installazione di un nuovo pacchetto apt
       # il nome del pacchetto è 'grafana'
       # # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
